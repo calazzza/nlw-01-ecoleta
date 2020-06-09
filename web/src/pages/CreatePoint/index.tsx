@@ -69,8 +69,8 @@ const CreatePoint = () => {
         if (selectedUF === '0')
             return;
         
-        axios.get<IGBECityResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUF}/distritos`).then(response => {
-            const citiesNames = response.data.map(city => city.nome).sort();
+            axios.get<IGBECityResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUF}/municipios`).then(response => {
+                const citiesNames = response.data.map(city => city.nome).sort(Intl.Collator().compare);
 
             setCities(citiesNames);
         });
