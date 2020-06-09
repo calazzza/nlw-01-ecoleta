@@ -51,6 +51,7 @@ const CreatePoint = () => {
            const {  latitude, longitude } = position.coords;
 
            setInitialPosition([latitude, longitude]);
+           setSelectedPosition([latitude, longitude]);
         });
     })
 
