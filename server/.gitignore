@@ -1,2 +1,11 @@
 /node_modules
-database.sqlite
+*.sqlite
+uploads/*
+
+#Items icons
+!uploads/baterias.svg
+!uploads/eletronicos.svg
+!uploads/lampadas.svg
+!uploads/oleo.svg
+!uploads/organicos.svg
+!uploads/papeis-papelao.svg
