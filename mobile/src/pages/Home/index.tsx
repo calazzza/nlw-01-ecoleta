@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Feather as Icon } from '@expo/vector-icons'
-import { View, StyleSheet, ImageBackground, Image, Text, TextInput, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, Platform } from 'react-native';
+import { View, StyleSheet, ImageBackground, Image, Text, TextInput, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, Platform, Alert } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native'
 
@@ -10,7 +10,9 @@ const Home = () => {
     const navigation = useNavigation();
 
     function handleNavigateToPoints(){
-        navigation.navigate('Points', { uf, city });
+      !uf || !city
+        ? Alert.alert('Ooooops...', 'É necessário preencher as informações de UF e cidade') 
+        : navigation.navigate('Points', { uf, city });
     }
     
     return (
